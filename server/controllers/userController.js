@@ -1,7 +1,7 @@
 "use strict";
 const UsersDB = require('../models/UsersDB');
 const User = require('../models/User');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 var jwt = require("jsonwebtoken");
 var secret = "somesecretkey";
 const {OAuth2Client} = require("google-auth-library");
