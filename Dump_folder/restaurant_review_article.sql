@@ -1,0 +1,59 @@
+-- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: restaurant_review
+-- ------------------------------------------------------
+-- Server version	8.0.26
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `article`
+--
+
+DROP TABLE IF EXISTS `article`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `article` (
+  `_id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` varchar(2500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `postedTime` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `memberId` int NOT NULL,
+  `groupId` int NOT NULL,
+  PRIMARY KEY (`_id`),
+  KEY `groupMemberId_idx` (`memberId`),
+  KEY `groupId_idx` (`groupId`),
+  CONSTRAINT `article_ibfk_1` FOREIGN KEY (`groupId`) REFERENCES `group` (`_id`),
+  CONSTRAINT `groupMemberId` FOREIGN KEY (`memberId`) REFERENCES `membership` (`_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `article`
+--
+
+LOCK TABLES `article` WRITE;
+/*!40000 ALTER TABLE `article` DISABLE KEYS */;
+INSERT INTO `article` VALUES (1,'Best Western food Stalls in SG','If you want to revisit your childhood, head down to any of these best Western food stalls for your lunchtime fix.\n  \n*1. Wow Wow West*\n![Wow Wow West food](https://eatbook.sg/wp-content/uploads/2022/02/wow-wow-west-chicken-chop.jpg)\nWow Wow West at ABC Brickworks Food Centre draws its fair share of loyal customers, who flock to the stall for their huge portions under $8. Though the stall isn’t technically a heritage eatery as it’s run by a young couple, the menu nonetheless pays homage to old-school Western food. Try the Fish & Chips ($8), where a massive deep-fried fish cutlet is topped with crispy fries, baked beans, and slaw.\nVisit [Wow Wow West website](https://www.wowwowwestgenuine.com.sg/).\nAddress: 6 Jalan Bukit Merah, #01-133, ABC Brickworks, Singapore 150006\nOpening hours: Tue-Sat 10:30am to 2pm, 4:30pm to 8pm\nTel: 9380 8571\n\n*2. Chef Hainanese Western Food*\n![Chef Hainanese Western Food](https://eatbook.sg/wp-content/uploads/2018/08/Queenstown-Food-Chef-Hainanese-Western-Food.jpg)\nThe popular Chef Hainanese Western Food is quite an elusive stall to dine at, especially since the stall only opens for two hours a day. They specialise in Hainanese-style Western grub that fans tout as truly nostalgic. Try their Mixed Grill ($10) for an all-in experience. This is served with chicken sausage, fish fillet, chicken chop, pork chop, a fried egg, and a medley of sides, including baked potato. Otherwise, the other mains on the menu are priced from $5.\nAddress: 38A Margaret Drive, Singapore 142038\nOpening hours: Fri-Wed 7pm to 9pm\n\n*3. Western Barbeque*\n![Western Barbeque Food](https://eatbook.sg/wp-content/uploads/2022/03/western-barbecue-flatlay.jpg)\nNestled amongst the Old Airport Road Food Centre sprawl is Western Barbeque, a stall that has been around since 1974. Long queues are to be expected here, as many fans come for the popular Chicken Chop ($7), which is served with a garlic sauce instead of your usual brown gravy. The garlic sauce is made with more than 10 ingredients, from a secret recipe that has been around for decades. The chicken itself is marinated well too, so it remains juicy even after cooking.\nAddress: 51 Old Airport Road, #01-53, Singapore 390051\nOpening hours: Daily 11am to 11pm\nTel: 8890 0353','2022-11-16 10:34:28',1,1),(2,'No.1 Western Food Review','*No. 1 Western Food in Commonwealth*\n![Western Food in Commonwealth](https://eatbook.sg/wp-content/uploads/2021/10/no.1-western-food-flat-lay.jpg)\nI came to hear about No.1 Western Food as my colleague was raving about this old-school hawker located in Commonwealth, serving delicious yet affordable Western delights. Curious to find out if it was worth a trip to the west, I was excited to head down to No.1 Western Food for their famous chicken cutlet, beef steak and more.\n![Chicken cutlet](https://eatbook.sg/wp-content/uploads/2021/10/no.1-western-food-chicken-cutlet.jpg)\nStarting off with the most popular item here, I went straight for the Chicken Cutlet ($5). Filling up almost half the plate, the size of the golden-brown cutlet was quite impressive. All meats are served with a side of thick-cut french fries, baked beans, and slices of fresh cucumber and tomatoes. They also slather all their dishes in their signature orangey tomato-based sauce. New batches of fries are released frequently, almost guaranteeing that you get hot piping fries that are crispy on the outside and moist on the inside.\n![Beef steak](https://eatbook.sg/wp-content/uploads/2021/10/no.1-western-food-close-up-of-beef-steak.jpg)\nBiting into the steak was a more positive experience than expected, contrary to the tough time I had cutting through the meat. Although the texture leaned towards the chewier side, the steak was thoroughly seasoned with salt and pepper, providing a savoury mouthful with every bite. I would still have preferred it to be more tender, but I can’t really complain as this steak is offered at such a low price point.\n![Pork chop](https://eatbook.sg/wp-content/uploads/2021/10/no.1-western-food-pork-chop.jpg)\nThe Pork Chop ($5) came in a generous portion with two large slabs of meat, pale with bits of char. Once again, I was truly wowed by the portion size in comparison to the price of this dish.\n![Fish and Chips](https://eatbook.sg/wp-content/uploads/2021/10/no.1-western-food-fish-and-chips.jpg)\nFinally, we went for the Fish and Chips ($5), which is my go-to order when I visit Western restaurants. The deep-fried batter looked extra promising, with its golden colouration. According to the owner, they use classic dory fish in their fish and chips. \n\nRecommended dishes: Chicken Cutlet ($5), Fish and Chips ($5)\nOpening hours: Thurs-Mon 11am to 4pm \nAddress: 1A Commonwealth Drive, #01-13, Singapore 140001','2021-10-20 09:39:42',7,1),(3,'Ling Maison - Underrated Western Food Gem Hidden in Toa Payoh!','Tucked away in a coffee shop within Jackson Square in Toa Payoh, Ling Maison is an underrated hidden gem that sells a slew of Western dishes. Not only are the portions hearty, the service is impeccable and the food is simply delicious and doesn’t skimp on quality. What’s more, you’ll also be able to find a handful of uncommon dishes to indulge in.\n![Smoked salmon](https://live.staticflickr.com/65535/52310112778_0628554bac_o.jpg)\nSadly, the Crispy Cheesy Chicken I was originally gunning for was not in stock that day so I opted for the Salmon Hollandaise ($12.90) instead. Irene shared that while most places use 150g of salmon for their dishes, she goes for 180g. The salmon was seasoned with Cajun spices before going on the grill for three minutes.\nWhile it could stand to be a tad more moist, the seasoning was done just right to allow the natural flavours of the fish to shine through and work in tandem with the creamy tanginess of the house-made Hollandaise sauce.\n![Hawaiian chicken dish](https://live.staticflickr.com/65535/52308924472_3421cd0841_o.jpg)\nI was also intrigued by the Hawaiian Smoked Chicken ($8.90) and wasn’t disappointed at all. The super-duper tender and juicy chicken was marinated beforehand in a secret house-made marinade that includes Japanese cooking wine and the sauce coating it was like a crosso between BBQ and tomato sauce. This yielded a bounty of sweet and tangy flavours all at once, accompanied by a burst of freshness from the pineapple slice on top.\nThe fries were very crispy and the fresh salad on the side sprinkled with sesame. I’d also recommend getting the potato salad as a side as well. The house-made side dish sees diced potato dressed in a light, tangy sauce with a lemon-y fragrance.\n\nStalls like these that keep prices affordable are truly great finds and with the number of enticing items on their menu, you’ll find yourself making a few return trips. I know I would, to give the Crispy Cheesy Chicken and Chicken Ragout a try!\nLing Maison Address: 11 Lorong 3 Toa Payoh, Jackson Sqaure, #01-34, Singapore 319579\nPhone: 9836 2128\nOpening Hours: 11am to 7.30pm, Monday to Thursday, 11am to 3pm, Friday to Saturday.\nFacebook: https://www.facebook.com/Ling-Maison-Western-Food-106979135058325/','2022-08-31 14:26:21',2,1),(4,'Fu Shi Traditional Roasted in Marsiling Mall','A decent plate of roasted meat really isn’t that difficult to find around Singapore, but a really memorable roast meat stall is hard to come by. Those who stay in the North are blessed with the existence of Fu Shi Traditional Roasted, which already has its share of loyal customers despite only being in Marsiling for three years.\n\n![Char siew rice image](https://eatbook.sg/wp-content/uploads/2021/03/Organic-Fu-Shi-Roasted-by-Mira-3-e1616730127637.jpg)\nI ordered char siew rice first. The skin had a noticeable crunch when bitten into yet remained very light. Best thing is they don’t compromise on their skin-to-meat ratio, with a generous crackling accompanying their pork belly chunks.\n\n![Roasted chicken image](https://eatbook.sg/wp-content/uploads/2021/03/Organic-Fu-Shi-Roasted-by-Mira-14-e1616730332832.jpg)\nTheir tender roast duck meat is certainly the real deal. I was pleased with the meat-to-bone ratio, with some pieces almost boneless, allowing me to savour the robust flavour of the meat. The duck skin was crisp enough too. \n![Roasted chicken noodle image](https://eatbook.sg/wp-content/uploads/2021/03/Organic-Fu-Shi-Roasted-by-Mira-9-e1616730438135.jpg)\nThen, I had to give their duck breast at least a try in the Roasted Duck Noodles ($4). Save the stingier portion of duck given, the dish justified its price tag by not compromising on the meat quality. \n\n*Ambience at Fu Shi Traditional Roasted*\n![Image of shop owners in front of the Fu Shi stall](https://eatbook.sg/wp-content/uploads/2021/03/Organic-Fu-Shi-Roasted-by-Mira-1-e1616730611633.jpg)\nLocated about a ten-minute walk from Marsiling MRT Station, Fu Shi Traditional Roasted is tucked away neatly in Marsiling Mall hawker centre, an enclave full of hidden gems including Kuroshiro White Curry Rice and Yan Ji Seafood Soup among others. That’s why it’s not a surprise the owners decided to move here from Shunfu Mart.\nAddress: 4 Woodlands Street 12, #01-01/02, Marsiling Mall Hawker Centre, Singapore 738623\nOpening hours: Wed-Sun 11am to 7pm\nTel: 9237 8157\nFacebook: https://www.facebook.com/fushitraditionalroasted/\n','2021-03-29 18:55:09',10,2);
+/*!40000 ALTER TABLE `article` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-01-06 19:46:38
